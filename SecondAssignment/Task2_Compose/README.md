@@ -1,6 +1,12 @@
 
 # 实验三：构建 Kotlin 应用并使用 Compose 布局
 
+| 任务 | 项目名称 | 源码链接 |
+| :--- | :--- | :--- |
+| 任务一 | 首个 Kotlin 应用 | [MyFirstKotlinApp](./MyFirstKotlinApp/) |
+| 任务二 | Compose 布局实践 | [ComposeLayoutPractice](./ComposeLayoutPractice/) |
+| 任务三 | AI 应用 Compose 布局 | [AIComposeUIDemo](./AIComposeUIDemo/) |
+
 ---
 
 ## 一、实验目的
