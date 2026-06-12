@@ -22,8 +22,6 @@ JupyterNotebookTutorial/
 
 Anaconda 是安装 Jupyter Notebook 的最佳方式。安装完成之后，启动 Anaconda Navigator，并启动 Notebook，浏览器中会显示类似 `https://localhost:8888/tree` 的网址，代表本地运行着 Notebook 的服务器。
 
-> **📸 截图位置**：此处应插入 Jupyter Notebook 启动界面截图
-
 ---
 
 ## 二、创建一个新的 Notebook
@@ -36,8 +34,6 @@ Anaconda 是安装 Jupyter Notebook 的最佳方式。安装完成之后，启�
 |------|------|
 | **Cell** | 文本或者代码执行单元，由 kernel 执行 |
 | **Kernel** | 计算引擎，执行 cell 的文本或者代码 |
-
-> **📸 截图位置**：此处应插入新建 Notebook 界面截图
 
 ---
 
@@ -62,6 +58,8 @@ Hello World!
 ```
 
 代码执行之后，cell 左侧的标签从 `In [ ]` 变成了 `In [1]`。`In` 代表输入，`[]` 中的数字代表 kernel 执行的顺序，而 `In [*]` 则表示代码 cell 正在执行代码。
+<img width="903" height="62" alt="image" src="https://github.com/user-attachments/assets/70626739-b207-4f38-8e6d-fd84fb9e7538" />
+
 
 ### 3.3 Cell 模式
 
@@ -118,6 +116,8 @@ print('%d squared is %d' % (x, y))
 ```
 3 squared is 9
 ```
+<img width="894" height="191" alt="image" src="https://github.com/user-attachments/assets/53c071b5-9cc4-447e-9627-e7847c2d767b" />
+
 
 ### Kernel 管理
 
@@ -181,6 +181,7 @@ if __name__ == "__main__":
 用例3: [1, 2, 3, 4, 5] -> [1, 2, 3, 4, 5]
 用例4: [5, 4, 3, 2, 1] -> [1, 2, 3, 4, 5]
 ```
+<img width="918" height="571" alt="image" src="https://github.com/user-attachments/assets/6de62382-c75a-4b1f-a379-7942764c042a" />
 
 ---
 
@@ -253,6 +254,8 @@ df.dtypes
 | company | object |
 | revenue | float64 |
 | profit | object |
+<img width="909" height="708" alt="image" src="https://github.com/user-attachments/assets/08410be4-e715-4ec0-a764-08f1606be721" />
+
 
 ### 6.4 数据清洗
 
@@ -263,18 +266,23 @@ profit 列包含非数字的值，需要进行清洗。
 non_numeric_profits = df.profit.str.contains('[^0-9.-]')
 df.loc[non_numeric_profits].head()
 ```
+<img width="911" height="204" alt="image" src="https://github.com/user-attachments/assets/57c2bbba-cbea-4aba-b95f-277852a96b6b" />
+
 
 **统计非数字记录数量**：
 ```python
 len(df.profit[non_numeric_profits])  # 输出: 369
 ```
+<img width="918" height="58" alt="image" src="https://github.com/user-attachments/assets/5517ead4-de0d-49df-9a1e-1866b430cc7b" />
+
 
 **绘制非数字记录分布**：
 ```python
 bin_sizes, _, _ = plt.hist(df.year[non_numeric_profits], bins=range(1955, 2006))
 ```
+> **📸 截图位置**：
+> <img width="912" height="364" alt="image" src="https://github.com/user-attachments/assets/5c88d5ec-1ea2-4701-ac54-8a37d66ee5ad" />
 
-> **📸 截图位置**：此处应插入非数字记录分布直方图
 
 **删除非数字记录**：
 ```python
@@ -295,6 +303,9 @@ df.dtypes
 | company | object |
 | revenue | float64 |
 | profit | float64 |
+<img width="920" height="247" alt="屏幕截图 2026-06-12 215923" src="https://github.com/user-attachments/assets/c140932e-dea9-4f76-9951-ef45224da7a9" />
+
+
 
 ### 6.5 使用 matplotlib 绘图
 
@@ -322,7 +333,10 @@ fig, ax = plt.subplots()
 plot(x, y1, ax, 'Increase in mean Fortune 500 company profits from 1955 to 2005', 'Profit (millions)')
 ```
 
-> **📸 截图位置**：此处应插入利润趋势图
+> **📸 截图位置**：
+> <img width="500" height="347" alt="屏幕截图 2026-06-12 215939" src="https://github.com/user-attachments/assets/29690177-4ebe-40f8-936d-093250fb011e" />
+
+
 
 **绘制收入趋势图**：
 ```python
@@ -330,7 +344,10 @@ fig, ax = plt.subplots()
 plot(x, y2, ax, 'Increase in mean Fortune 500 company revenues from 1955 to 2005', 'Revenue (millions)')
 ```
 
-> **📸 截图位置**：此处应插入收入趋势图
+> **📸 截图位置**：
+> <img width="552" height="342" alt="屏幕截图 2026-06-12 215951" src="https://github.com/user-attachments/assets/fb0e429c-e8e6-4c5e-afce-4a1817729dd8" />
+
+
 
 **绘制含标准差的图表**：
 ```python
@@ -350,7 +367,11 @@ fig.set_size_inches(14, 4)
 fig.tight_layout()
 ```
 
-> **📸 截图位置**：此处应插入含标准差的利润与收入对比图
+> **📸 截图位置**：
+> <img width="918" height="410" alt="image" src="https://github.com/user-attachments/assets/b442f30d-88cf-49bb-8de0-39a153b11953" />
+
+
+
 
 ### 6.6 图表解读
 
@@ -386,35 +407,6 @@ fig.tight_layout()
 | Python (.py) | 脚本执行 |
 
 如需协同共享 `.ipynb` 文件，可借助 GitHub 或 Google Colab。
-
----
-
-## 八、Jupyter Notebook 扩展工具
-
-扩展工具提供丰富的附加功能，如代码补全、内容目录、变量检查等。
-
-### 8.1 安装扩展工具
-
-在 Anaconda Prompt / 终端中依次执行：
-
-```bash
-pip install jupyter_contrib_nbextensions
-jupyter contrib nbextension install --user
-pip install jupyter_nbextensions_configurator
-jupyter nbextensions_configurator enable --user
-```
-
-### 8.2 启用代码补全
-
-1. 重新打开 Jupyter Notebook
-2. 点击 **Nbextensions** 标签
-3. 勾选 **Hinterland**（代码自动补全）
-
-> **📸 截图位置**：此处应插入 Nbextensions 配置界面截图
-
-### 8.3 验证
-
-在 Notebook 中输入代码，按 `Tab` 键即可看到代码补全提示。
 
 ---
 
