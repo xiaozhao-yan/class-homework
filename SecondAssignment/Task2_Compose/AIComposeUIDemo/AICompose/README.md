@@ -153,7 +153,8 @@ val Typography = Typography(
 ```
 
 > **📸 截图位置**：
-> 
+> <img width="2559" height="1528" alt="image" src="https://github.com/user-attachments/assets/41c5dba1-2b11-4230-b079-524f554cd5d7" />
+
 
 ---
 
@@ -212,7 +213,8 @@ fun TopBar() {
 ```
 
 > **📸 截图位置**：
-> 
+> <img width="1068" height="634" alt="image" src="https://github.com/user-attachments/assets/f0fd6175-5baa-4f5b-a86e-de58237a5356" />
+
 
 
 ### 2. 相机预览区（CameraPreviewArea）
@@ -239,7 +241,8 @@ fun CameraPreviewArea() {
 ```
 
 > **📸 截图位置**：
-> 
+> <img width="1433" height="860" alt="image" src="https://github.com/user-attachments/assets/7c605bfd-e92e-48b2-ac63-2b086e3dfdbe" />
+
 
 
 ### 3. 识别结果区（ResultArea）
@@ -269,7 +272,8 @@ fun ResultArea() {
 ```
 
 > **📸 截图位置**：
-> 
+> <img width="1311" height="745" alt="image" src="https://github.com/user-attachments/assets/f3eda952-0a63-4980-b85e-c0786590a42d" />
+
 
 
 
@@ -338,7 +342,8 @@ fun ButtonArea() {
 ```
 
 > **📸 截图位置**：
->
+><img width="1419" height="843" alt="image" src="https://github.com/user-attachments/assets/59e0d9e5-8dea-4d9e-96e0-bebf95435aad" />
+
 
 > 
 ---
@@ -362,7 +367,9 @@ fun LiteRTAIDemoPreview() {
 }
 ```
 
-> **📸 截图位置**：此处应插入 Android Studio 预览界面的截图
+> **📸 截图位置**：
+> <img width="377" height="777" alt="image" src="https://github.com/user-attachments/assets/6b143f61-2630-4fdf-a43c-8e9814b58399" />
+
 
 ---
 
@@ -400,8 +407,6 @@ fun LiteRTAIDemoPreview() {
 | 结果展示区 | 白色卡片，显示模型、识别结果、置信度、时间 |
 | 按钮区 | 4 个彩色按钮，分两行排列 |
 | 主题切换 | 支持亮色/暗色模式自动切换 |
-
-> **📸 截图位置**：此处应插入应用在模拟器/真机上运行的完整界面截图（亮色和暗色模式）
 
 ---
 
