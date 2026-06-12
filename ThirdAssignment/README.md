@@ -1,27 +1,143 @@
-# Python 综合练习项目
-## 1. 基础语法练习
-### Hello World
+# Jupyter Notebook 基础教程
+
+## 📌 项目简介
+
+本教程详细介绍 Jupyter Notebook 的基本操作，包括创建、编辑、运行 cell，管理 kernel，以及使用快捷键。此外，还展示了如何进行 Python 编程和数据分析，涉及数据清洗、绘图。最后，讨论了 Notebook 的分享、导出及扩展工具的安装与使用。
+
+---
+
+## 📁 项目结构
+
+```
+JupyterNotebookTutorial/
+├── README.md                    # 项目说明文档
+├── Untitled.ipynb               # Jupyter Notebook 源文件
+├── fortune500.csv               # Fortune 500 数据集
+└── requirements.txt             # 依赖库列表
+```
+
+---
+
+## 一、Jupyter Notebook 简介
+
+Anaconda 是安装 Jupyter Notebook 的最佳方式。安装完成之后，启动 Anaconda Navigator，并启动 Notebook，浏览器中会显示类似 `https://localhost:8888/tree` 的网址，代表本地运行着 Notebook 的服务器。
+
+> **📸 截图位置**：此处应插入 Jupyter Notebook 启动界面截图
+
+---
+
+## 二、创建一个新的 Notebook
+
+新建一个 Notebook `Python 3 (ipykernel)`，生成一个 `.ipynb` 文件。`.ipynb` 文件即所谓的一个 Notebook，实际是基于 JSON 格式的文本文件。
+
+新建的 Notebook 界面包含两个关键元素：
+
+| 元素 | 说明 |
+|------|------|
+| **Cell** | 文本或者代码执行单元，由 kernel 执行 |
+| **Kernel** | 计算引擎，执行 cell 的文本或者代码 |
+
+> **📸 截图位置**：此处应插入新建 Notebook 界面截图
+
+---
+
+## 三、Cell 详解
+
+### 3.1 Cell 类型
+
+| 类型 | 说明 |
+|------|------|
+| **代码 Cell** | 包含可被 kernel 执行的代码，执行之后在下方显示输出 |
+| **Markdown Cell** | 书写 Markdown 标记语言的 cell |
+
+### 3.2 代码执行示例
+
+```python
 print('Hello World!')
-输出：
+```
+
+**输出**：
+```
 Hello World!
+```
 
-延时操作
-import time
-time.sleep(3)
-程序暂停3秒。
+代码执行之后，cell 左侧的标签从 `In [ ]` 变成了 `In [1]`。`In` 代表输入，`[]` 中的数字代表 kernel 执行的顺序，而 `In [*]` 则表示代码 cell 正在执行代码。
 
-NumPy 与函数定义
+### 3.3 Cell 模式
+
+| 模式 | 切换方式 | 外观 |
+|------|----------|------|
+| **编辑模式** | `Enter` 键 | 绿色轮廓 |
+| **命令模式** | `Esc` 键 | 蓝色轮廓 |
+
+### 3.4 常用快捷键
+
+#### 命令模式快捷键
+
+| 快捷键 | 功能 |
+|--------|------|
+| `↑` / `↓` | 上下移动 cell |
+| `A` / `B` | 在上方/下方插入 cell |
+| `M` | 转换为 Markdown cell |
+| `Y` | 转换为代码 cell |
+| `D` + `D` | 删除 cell |
+| `Z` | 撤销删除 |
+| `H` | 显示所有快捷键帮助 |
+| `Ctrl + Shift + P` | 查看所有支持的命令 |
+
+#### 编辑模式快捷键
+
+| 快捷键 | 功能 |
+|--------|------|
+| `Ctrl + Shift + -` | 以光标处分割 cell |
+
+---
+
+## 四、Kernel（内核）
+
+每个 notebook 都基于一个内核运行，当执行 cell 代码时，代码将在内核当中运行，运行的结果会显示在页面上。Kernel 中运行的状态在整个文档中是延续的，可以跨越所有的 cell。
+
+### 示例：跨 cell 使用变量
+
+**Cell 1**：
+```python
 import numpy as np
+
 def square(x):
     return x * x
+```
 
+**Cell 2**：
+```python
 x = np.random.randint(1, 10)
 y = square(x)
 print('%d squared is %d' % (x, y))
-输出示例：
-5 squared is 25
+```
 
-## 2. 选择排序算法
+**输出**：
+```
+3 squared is 9
+```
+
+### Kernel 管理
+
+| 操作 | 说明 |
+|------|------|
+| `Restart Kernel` | 清空保存在内存中的变量 |
+| `File > Close and Halt` | 真正关闭 kernel |
+| `Kernel > Shutdown` | 关闭 kernel |
+
+> **注意**：在浏览器中关闭一个正在运行的 notebook 页面，并未真正关闭终止 Kernel 的运行，其还是后台执行。
+
+---
+
+## 五、简单的 Python 程序示例
+
+本节主要目的掌握 Python 的基本语法，要求完成基于 Python 的选择排序算法。
+
+### 选择排序实现
+
+```python
 def selection_sort(arr):
     n = len(arr)
     
@@ -33,191 +149,308 @@ def selection_sort(arr):
         if min_idx != i:
             arr[i], arr[min_idx] = arr[min_idx], arr[i]
     return arr
+
 def test():
-    print("--" * 50)
+    print("--" * 25)
     print("选择排序算法测试")
-    print("--" * 50)
+    print("--" * 25)
+    
     test_cases = [
         [64, 25, 12, 22, 11],
         [5, 2, 8, 1, 9, 3],
         [1, 2, 3, 4, 5],
-        [5, 4, 3, 2, 1],
-        [3],
-        [],
-        [7, 7, 7, 7]
+        [5, 4, 3, 2, 1]
     ]
+    
     for i, arr in enumerate(test_cases, 1):
         original = arr.copy()
         sorted_arr = selection_sort(arr.copy())
-        print(f"用例{i}: {arr}")
-        print(f"原始数据：{original}")
-        print(f"排序结果：{sorted_arr}")
-        print()
-    
-    print("=" * 50)
-    print("手动输入测试")
-    print("--" * 50)
-    
-    try:
-        input_str = input("请输入要排序的数字（用空格分隔）：")
-        if input_str.strip():
-            user_arr = [int(x) for x in input_str.split()]
-            print(f"原始数组：{user_arr}")
-            sorted_arr = selection_sort(user_arr)
-            print(f"排序结果：{sorted_arr}")
-        else:
-            print("未输入数据，跳过手动测试")
-    except ValueError:
-        print("输入格式错误，请输入数字并用空格分隔")
-    except KeyboardInterrupt:
-        print("\n手动输入已取消")
-    
-    print("\n" + "=" * 50)
-    print("测试完成！")
-    print("=" * 50)
+        print(f"用例{i}: {original} -> {sorted_arr}")
+
 if __name__ == "__main__":
     test()
+```
 
-排序算法运行结果
---------------------------------------------
+**输出**：
+```
+--------------------------------------------------
 选择排序算法测试
---------------------------------------------
-用例1: [64, 25, 12, 22, 11]
-原始数据：[64, 25, 12, 22, 11]
-排序结果：[11, 12, 22, 25, 64]
+--------------------------------------------------
+用例1: [64, 25, 12, 22, 11] -> [11, 12, 22, 25, 64]
+用例2: [5, 2, 8, 1, 9, 3] -> [1, 2, 3, 5, 8, 9]
+用例3: [1, 2, 3, 4, 5] -> [1, 2, 3, 4, 5]
+用例4: [5, 4, 3, 2, 1] -> [1, 2, 3, 4, 5]
+```
 
-用例2: [5, 2, 8, 1, 9, 3]
-原始数据：[5, 2, 8, 1, 9, 3]
-排序结果：[1, 2, 3, 5, 8, 9]
+---
 
-用例3: [1, 2, 3, 4, 5]
-原始数据：[1, 2, 3, 4, 5]
-排序结果：[1, 2, 3, 4, 5]
+## 六、数据分析示例：Fortune 500
 
-3. Fortune 500 数据分析
-导入库
+本例中将分析历年财富世界 500 强的数据（1955-2005）。
+
+### 6.1 设置与导入
+
+```python
 %matplotlib inline
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-读取数据
-df = pd.read_csv(r'D:\下载\fortune500.csv')
+```
 
-# 查看数据
+| 库 | 用途 |
+|---|------|
+| `pandas` | 数据处理 |
+| `matplotlib` | 绘图 |
+| `seaborn` | 美化图表 |
+
+> `%matplotlib inline` 是 line magic，表示使用 matplotlib 画图，并将图片输出在页面中。
+
+### 6.2 加载数据集
+
+```python
+df = pd.read_csv('fortune500.csv')
+```
+
+### 6.3 检查数据集
+
+**查看前 5 行**：
+```python
 df.head()
+```
+
+| Year | Rank | Company | Revenue (in millions) | Profit (in millions) |
+|------|------|---------|----------------------|---------------------|
+| 1955 | 1 | General Motors | 9823.5 | 806 |
+| 1955 | 2 | Exxon Mobil | 5661.4 | 584.8 |
+| 1955 | 3 | U.S. Steel | 3250.4 | 195.4 |
+| 1955 | 4 | General Electric | 2959.1 | 212.6 |
+| 1955 | 5 | Esmark | 2510.8 | 19.1 |
+
+**查看后 5 行**：
+```python
 df.tail()
+```
 
-# 重命名列
+**重命名列**：
+```python
 df.columns = ['year', 'rank', 'company', 'revenue', 'profit']
-数据清洗
+```
 
-# 查看数据类型
+**检查数据条目**：
+```python
+len(df)  # 输出: 25500
+```
+
+**检查数据类型**：
+```python
 df.dtypes
+```
 
-# 处理非数值型利润数据
-non_numeric_profits = df.profit.str.contains('[-0.9.-]')
+| 列名 | 类型 |
+|------|------|
+| year | int64 |
+| rank | int64 |
+| company | object |
+| revenue | float64 |
+| profit | object |
+
+### 6.4 数据清洗
+
+profit 列包含非数字的值，需要进行清洗。
+
+**查找非数字记录**：
+```python
+non_numeric_profits = df.profit.str.contains('[^0-9.-]')
 df.loc[non_numeric_profits].head()
+```
 
-# 查看非数值数据数量
-len(df.profit[non_numeric_profits])
+**统计非数字记录数量**：
+```python
+len(df.profit[non_numeric_profits])  # 输出: 369
+```
 
-# 绘制非数值数据分布
+**绘制非数字记录分布**：
+```python
 bin_sizes, _, _ = plt.hist(df.year[non_numeric_profits], bins=range(1955, 2006))
+```
 
-# 过滤并转换数据类型
+> **📸 截图位置**：此处应插入非数字记录分布直方图
+
+**删除非数字记录**：
+```python
 df = df.loc[~non_numeric_profits]
 df.profit = df.profit.apply(pd.to_numeric)
+```
 
-# 查看清洗后数据
-len(df)
+**验证清洗结果**：
+```python
+len(df)  # 输出: 25131
 df.dtypes
-数据分析与可视化
-# 按年份分组统计
+```
+
+| 列名 | 类型 |
+|------|------|
+| year | int64 |
+| rank | int64 |
+| company | object |
+| revenue | float64 |
+| profit | float64 |
+
+### 6.5 使用 matplotlib 绘图
+
+**按年份分组计算平均值**：
+```python
 group_by_year = df.loc[:, ['year', 'revenue', 'profit']].groupby('year')
 avgs = group_by_year.mean()
 x = avgs.index
 y1 = avgs.profit
+y2 = avgs.revenue
+```
 
-# 定义绘图函数
+**定义绘图函数**：
+```python
 def plot(x, y, ax, title, y_label):
     ax.set_title(title)
     ax.set_ylabel(y_label)
     ax.plot(x, y)
+    ax.margins(x=0, y=0)
+```
 
-# 绘制利润趋势图
+**绘制利润趋势图**：
+```python
 fig, ax = plt.subplots()
 plot(x, y1, ax, 'Increase in mean Fortune 500 company profits from 1955 to 2005', 'Profit (millions)')
+```
 
-# 绘制收入趋势图
-y2 = avgs.revenue
+> **📸 截图位置**：此处应插入利润趋势图
+
+**绘制收入趋势图**：
+```python
 fig, ax = plt.subplots()
 plot(x, y2, ax, 'Increase in mean Fortune 500 company revenues from 1955 to 2005', 'Revenue (millions)')
+```
 
-# 带标准差的绘图函数
+> **📸 截图位置**：此处应插入收入趋势图
+
+**绘制含标准差的图表**：
+```python
 def plot_with_std(x, y, stds, ax, title, y_label):
     ax.fill_between(x, y - stds, y + stds, alpha=0.2)
     plot(x, y, ax, title, y_label)
 
-# 创建子图展示带标准差的数据
 fig, (ax1, ax2) = plt.subplots(ncols=2)
 title = 'Increase in mean and std Fortune 500 company %s from 1955 to 2005'
 stds1 = group_by_year.std().profit.values
 stds2 = group_by_year.std().revenue.values
+
 plot_with_std(x, y1.values, stds1, ax1, title % 'profits', 'Profit (millions)')
 plot_with_std(x, y2.values, stds2, ax2, title % 'revenues', 'Revenue (millions)')
+
 fig.set_size_inches(14, 4)
 fig.tight_layout()
+```
 
-完整可视化图表
-python
-group_by_year = df.loc[:, ['year', 'revenue', 'profit']].groupby('year')
-avg = group_by_year.mean()
-stds = group_by_year.std()
+> **📸 截图位置**：此处应插入含标准差的利润与收入对比图
 
-x = avg.index
-profits_mean = avg.profit
-revenues_mean = avg.revenue
-profits_std = stds.profit
-revenues_std = stds.revenue
+### 6.6 图表解读
 
-# 创建图表
-fig, ax = plt.subplots(figsize=(12, 6))
+| 图表 | 解读 |
+|------|------|
+| 利润趋势 | 整体呈指数增长，但 1990 年代初期出现急剧下滑（对应经济衰退和网络泡沫） |
+| 收入趋势 | 持续增长，未出现明显下降 |
+| 标准差 | 不同公司之间的收入和利润差距随年份扩大 |
 
-ax.plot(x, profits_mean, label='Profit (mean)', color='blue', linewidth=2)
-ax.fill_between(x, profits_mean - profits_std, profits_mean + profits_std,
-    alpha=0.2, color='blue', label='Profit ±1 std')
+---
 
-ax.plot(x, revenues_mean, label='Revenue (mean)', color='red', linestyle='--', linewidth=2)
-ax.fill_between(x, revenues_mean - revenues_std, revenues_mean + revenues_std,
-    alpha=0.2, color='red', label='Revenue ±1 std')
+## 七、分享 Notebooks
 
-ax.set_title('Fortune 500 Companies: Mean Profit & Revenue (with Std Dev)', fontsize=14)
-ax.set_xlabel('Year', fontsize=12)
-ax.set_ylabel('Amount (millions)', fontsize=12)
-ax.legend()
-ax.grid(True, linestyle=':', alpha=0.6)
-ax.margins(x=0.02, y=0.05)
+### 7.1 分享之前的工作
 
-plt.tight_layout()
-plt.show()
+分享前应确保 Notebook 包含代码执行的输出，且结果符合预期：
 
-运行方式
-方式一：Jupyter Notebook
-打开 Jupyter Notebook
-打开 Untitled1.ipynb
-依次运行每个代码单元格
+| 步骤 | 操作 |
+|------|------|
+| 1 | 点击 `Cell > All Output > Clear` |
+| 2 | 点击 `Kernel > Restart & Run All` |
+| 3 | 等待所有代码执行完毕 |
 
-📁 项目结构
-text
-project/
-├── README.md              # 项目说明文档
-├── Untitled1.ipynb        # Jupyter Notebook 源文件
-└── fortune500.csv         # 数据集文件（需要自行准备）
+### 7.2 导出 Notebooks
 
-⚠️ 注意事项
-数据文件路径：fortune500.csv 默认路径为 D:\下载\fortune500.csv，如果文件在其他位置，需要修改代码中的路径
+使用 `File > Download as` 可以导出多种格式：
 
-首次运行：需要先安装依赖库：
-bash
-pip install numpy pandas matplotlib seaborn
-Jupyter 内联绘图：代码中的 %matplotlib inline 仅在 Jupyter 中有效，转换为 .py 文件时需要删除
+| 格式 | 用途 |
+|------|------|
+| HTML | 网页查看 |
+| PDF | 文档打印 |
+| Markdown | 文档编辑 |
+| Python (.py) | 脚本执行 |
+
+如需协同共享 `.ipynb` 文件，可借助 GitHub 或 Google Colab。
+
+---
+
+## 八、Jupyter Notebook 扩展工具
+
+扩展工具提供丰富的附加功能，如代码补全、内容目录、变量检查等。
+
+### 8.1 安装扩展工具
+
+在 Anaconda Prompt / 终端中依次执行：
+
+```bash
+pip install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+pip install jupyter_nbextensions_configurator
+jupyter nbextensions_configurator enable --user
+```
+
+### 8.2 启用代码补全
+
+1. 重新打开 Jupyter Notebook
+2. 点击 **Nbextensions** 标签
+3. 勾选 **Hinterland**（代码自动补全）
+
+> **📸 截图位置**：此处应插入 Nbextensions 配置界面截图
+
+### 8.3 验证
+
+在 Notebook 中输入代码，按 `Tab` 键即可看到代码补全提示。
+
+---
+
+## 🔧 环境配置
+
+### 依赖库安装
+
+```bash
+pip install numpy pandas matplotlib seaborn jupyter_contrib_nbextensions
+```
+
+### requirements.txt
+
+```
+numpy>=1.23.0
+pandas>=1.5.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+jupyter_contrib_nbextensions>=0.5.0
+```
+
+---
+
+## 📊 实验总结
+
+| 模块 | 完成情况 | 说明 |
+|------|----------|------|
+| Jupyter Notebook 基本操作 | ✅ | cell、kernel、快捷键 |
+| 选择排序算法 | ✅ | 实现 + 测试 |
+| Fortune 500 数据分析 | ✅ | 数据清洗 + 可视化 |
+
+---
+
+## 📚 参考资料
+
+- [Jupyter Notebook 官方文档](https://jupyter-notebook.readthedocs.io/)
+- [How to Use Jupyter Notebook in 2020](https://www.dataquest.io/blog/jupyter-notebook-tutorial/)
+- [Pandas 官方文档](https://pandas.pydata.org/)
+- [Matplotlib 官方文档](https://matplotlib.org/)
