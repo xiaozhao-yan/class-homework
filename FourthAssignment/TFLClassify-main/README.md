@@ -14,7 +14,7 @@
 
 > **📸 截图位置**：
 <img width="2559" height="1530" alt="run" src="https://github.com/user-attachments/assets/6875a767-343d-451e-9aa0-1fa7cb69c0e8" />
-<img width="1260" height="2800" alt="测试" src="https://github.com/user-attachments/assets/14c7b285-2f3d-45ce-b34c-6ec9b8fcf5e7" />
+<img width="400"  alt="测试" src="https://github.com/user-attachments/assets/14c7b285-2f3d-45ce-b34c-6ec9b8fcf5e7" />
 
 
 
@@ -96,21 +96,14 @@ git clone https://github.com/hoitab/TFLClassify.git
 
 1. 确保当前选中的是 **`start`** 模块
 
-> **📸 截图位置**：此处应插入选中 start 模块截图
-
 2. 右键 `start` 模块 → `New` → `Other` → `TensorFlow Lite Model`
 
-> **📸 截图位置**：此处应插入 New → TensorFlow Lite Model 截图
-
 3. 选择训练好的模型文件。本教程使用 `finish` 模块中 `ml` 文件夹下的 `FlowerModel.tflite`
-
-> **📸 截图位置**：此处应插入选择模型文件截图
 
 4. 点击 **Finish**，系统自动下载模型依赖包并添加到 `build.gradle`
 
 5. 导入成功后，可以看到模型摘要信息
 
-> **📸 截图位置**：此处应插入模型导入成功截图
 
 ### 2. 检查依赖配置
 
@@ -134,8 +127,6 @@ dependencies {
 
 1. 点击 `View` → `Tool Windows` → `TODO`
 2. 可以对 TODO 列表按模块分组，方便定位
-
-> **📸 截图位置**：此处应插入 TODO 列表截图
 
 ### TODO 1：初始化模型
 
@@ -233,7 +224,8 @@ override fun analyze(imageProxy: ImageProxy) {
 | 向日葵 | sunflowers | >85% |
 | 郁金香 | tulips | >85% |
 
-> **📸 截图位置**：此处应插入最终运行效果截图
+> **📸 截图位置**：
+> <img width="400"  alt="测试" src="https://github.com/user-attachments/assets/14c7b285-2f3d-45ce-b34c-6ec9b8fcf5e7" />
 
 ---
 
