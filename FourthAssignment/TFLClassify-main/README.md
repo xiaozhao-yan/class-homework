@@ -1,6 +1,3 @@
-好的，我来帮你写一份详细的 `README.md`：
-
-```markdown
 # 基于 TensorFlow Lite 实现的 Android 花卉识别应用
 
 ## 📌 项目简介
@@ -17,6 +14,8 @@
 
 > **📸 截图位置**：
 <img width="2559" height="1530" alt="run" src="https://github.com/user-attachments/assets/6875a767-343d-451e-9aa0-1fa7cb69c0e8" />
+<img width="1260" height="2800" alt="测试" src="https://github.com/user-attachments/assets/14c7b285-2f3d-45ce-b34c-6ec9b8fcf5e7" />
+
 
 
 
@@ -74,7 +73,8 @@ git clone https://github.com/hoitab/TFLClassify.git
 2. 选择 `TFLClassify/build.gradle` 打开整个项目
 
 > **📸 截图位置**：
-> 
+> <img width="2543" height="1526" alt="image" src="https://github.com/user-attachments/assets/51a2df42-6f36-42bb-a554-3c8da0b5c168" />
+
 
 
 3. 项目包含两个模块：
@@ -85,13 +85,8 @@ git clone https://github.com/hoitab/TFLClassify.git
 
 5. 选择 **`start`** 模块，运行到物理设备（**推荐使用真机，模拟器可能不支持 CameraX**）
 
-> **📸 截图位置**：
-> 
-
-
 6. 授权相机权限，初始界面显示随机数模拟的识别结果
-
-> **📸 截图位置**：此处应插入初始运行效果截图
+<img width="362" height="703" alt="image" src="https://github.com/user-attachments/assets/d076a6d2-9b3e-4c45-a8aa-407c1b612b3a" />
 
 ---
 
