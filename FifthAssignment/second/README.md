@@ -189,6 +189,7 @@ Found 372 images belonging to 3 classes.
 ```
 
 **📸 截图位置 4**：
+
 <img width="316" height="51" alt="image" src="https://github.com/user-attachments/assets/0090c53c-3359-4365-92f7-b3905c35bfe6" />
 
 
@@ -386,7 +387,3 @@ img6.png: CNN 模型结构摘要与训练过程日志
 
 **实验完成日期**：2026年6月10日
 ```
-
-
-
-
