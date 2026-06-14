@@ -33,9 +33,7 @@ FifthAssignment/
 ├── 花卉分类器_training.md          # 训练代码文档
 ├── images/                        # 截图文件夹
 │   ├── run.png                    # 运行效果图
-│   ├── 测试.jpg                    # 测试截图
-│   ├── training_curves.png        # 训练曲线图
-│   └── confusion_matrix.png       # 混淆矩阵图
+│   └── 测试.jpg                    # 测试截图
 └── README.md                      # 项目说明文档
 ```
 ---
